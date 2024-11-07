@@ -1,12 +1,16 @@
-const mysql = require('mysql2');
-const dotenv = require('dotenv');
-dotenv.config();
+<<<<<<< HEAD
+// app.js
+const PORT = process.env.PORT || 5000;
+const express = require('express');
 
-const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: 'chonchola',
-  database: 'turfbooker',
-});
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+=======
+const PORT = process.env.PORT || 5000;
+const express = require('express');
 
-module.exports = pool.promise();
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+>>>>>>> 34469114777496523f99062a0242ac2d358193ac
