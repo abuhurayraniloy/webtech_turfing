@@ -45,9 +45,10 @@ Booking.getById = async (id) => {
   return rows[0];
 };
 
-Booking.cancel = async (bookingId) => {
-  const query = `UPDATE bookings SET status = 'canceled' WHERE id = ?`;
+Booking.delete = async (bookingId) => {
+  const query = `DELETE FROM bookings WHERE id = ?`;
   await db.execute(query, [bookingId]);
 };
+
 
 module.exports = Booking;
