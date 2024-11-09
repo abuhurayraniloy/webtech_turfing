@@ -45,6 +45,11 @@ Booking.getById = async (id) => {
   return rows[0];
 };
 
+Booking.getAll = async () => {
+  const [rows] = await db.query(`SELECT * FROM bookings`);
+  return rows;
+};
+
 Booking.delete = async (bookingId) => {
   const query = `DELETE FROM bookings WHERE id = ?`;
   await db.execute(query, [bookingId]);

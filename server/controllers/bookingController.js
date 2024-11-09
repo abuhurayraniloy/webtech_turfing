@@ -66,6 +66,17 @@ exports.getTurfBookings = async (req, res, next) => {
   }
 };
 
+exports.getAllBookings = async (req, res, next) => {
+  
+  try {
+    const bookings = await Booking.getAll();
+    res.status(200).json(bookings);
+  } catch (error) {
+    next(error);
+  }
+};
+
+
 exports.cancelBooking = async (req, res, next) => {
   const { bookingId } = req.params;
   const userId = req.user.id;
